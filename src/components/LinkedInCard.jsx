@@ -52,7 +52,7 @@ export default function LinkedInCard({ contact, store }) {
 
   const id = `li${contact.id}`;
   return (
-    <article className="card" aria-label={`LinkedIn note for ${L.fullName(contact)}`}>
+    <article className="card" data-kind="linkedin" aria-label={`LinkedIn note for ${L.fullName(contact)}`}>
       <ContactHeader contact={contact} contacts={contacts} extra={<span className="pill">{reasonFor(contact)}</span>} />
       <label className="field-label" htmlFor={id}>Connection note</label>
       <textarea id={id} rows={4} maxLength={MAX} value={note} placeholder={'Press "Write note" for a draft, or type your own.'}

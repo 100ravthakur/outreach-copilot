@@ -4,9 +4,9 @@ import { fmtDate } from '../components/ui.jsx';
 
 const uniq = (list) => [...new Set(list.filter(Boolean))].sort((a, b) => a.localeCompare(b));
 
-function Tile({ label, value, sub, strong }) {
+function Tile({ label, value, sub, tone }) {
   return (
-    <div className={`tile${strong ? ' strong' : ''}`}>
+    <div className={`tile${tone ? ` tone-${tone}` : ''}`}>
       <div className="tile-value">{value}</div>
       <div className="tile-label">{label}</div>
       {sub && <div className="tile-sub">{sub}</div>}
@@ -48,12 +48,12 @@ export default function Dashboard({ store }) {
       </div>
 
       <div className="tiles">
-        <Tile strong label="Meetings booked" value={t.meetings} sub={`${t.meetingRate}% of first emails`} />
-        <Tile strong label="Replies" value={t.replies} sub={`${t.replyRate}% reply rate`} />
+        <Tile tone="green" label="Meetings booked" value={t.meetings} sub={`${t.meetingRate}% of first emails`} />
+        <Tile tone="amber" label="Replies" value={t.replies} sub={`${t.replyRate}% reply rate`} />
         <Tile label="Interested replies" value={t.interested} />
         <Tile label="Active opportunities" value={t.activeOpportunities} sub="in conversation now" />
-        <Tile label="First emails sent" value={t.firstEmails} />
-        <Tile label="Follow-ups sent" value={t.followUps} />
+        <Tile tone="blue" label="First emails sent" value={t.firstEmails} />
+        <Tile tone="purple" label="Follow-ups sent" value={t.followUps} />
         <Tile label="Follow-ups due today" value={t.followUpsDue} />
         <Tile label="LinkedIn requests" value={t.linkedinRequests} />
         <Tile label="Contacts added" value={t.added} />

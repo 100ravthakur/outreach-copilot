@@ -50,6 +50,7 @@ AI rules: never invent facts about the prospect; use only the contact's research
 - No `window.alert` / `confirm` / `prompt`. Use `ConfirmButton` or an in-page notice.
 - Plain wording in the UI ("I sent it", not "Submit"). Must work at 400px wide with visible focus states.
 - Colours only through the CSS tokens at the top of `src/styles.css`.
+- Section colours via `data-kind`: `first` blue, `followup` purple, `linkedin` green, `reply` amber (cards, Today tabs). Dashboard tiles use `tone-*` classes.
 - Example data must stay fictional (`example.com` addresses, invented companies).
 
 ## Roadmap

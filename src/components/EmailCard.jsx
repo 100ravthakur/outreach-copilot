@@ -103,7 +103,7 @@ export default function EmailCard({ contact, kind, store }) {
       : null;
 
   return (
-    <article className="card" aria-label={`Email to ${L.fullName(contact)}`}>
+    <article className="card" data-kind={kind} aria-label={`Email to ${L.fullName(contact)}`}>
       <ContactHeader contact={contact} contacts={contacts} extra={extra} />
 
       <div className="mail">

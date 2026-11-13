@@ -121,8 +121,8 @@ export default function Today({ store }) {
       <ReplyLogger store={store} />
 
       <div className="tabs" role="tablist" aria-label="Today's work">
-        {TABS.map(([key, label]) => (
-          <button key={key} type="button" role="tab" id={`tab-${key}`} aria-selected={tab === key} className={tab === key ? 'tab active' : 'tab'}
+        {TABS.map(([key, label, tabKind]) => (
+          <button key={key} type="button" role="tab" id={`tab-${key}`} data-kind={tabKind} aria-selected={tab === key} className={tab === key ? 'tab active' : 'tab'}
             disabled={batch?.running} onClick={() => { setTab(key); setBatch(null); }}>
             {label} <span className="count">{lists[key].length}</span>
           </button>
