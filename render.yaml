@@ -1,0 +1,10 @@
+# Render blueprint: free static site built from this repository.
+services:
+  - type: web
+    name: outreach-copilot
+    runtime: static
+    buildCommand: npm install && npm run build
+    staticPublishPath: ./dist
+    envVars:
+      - key: NODE_VERSION
+        value: "20"

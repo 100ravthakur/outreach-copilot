@@ -43,6 +43,11 @@ npm run build   # creates the dist/ folder for deployment
 1. Push this folder to a GitHub repository.
 2. On https://vercel.com choose "Add New Project", pick the repository, keep the detected Vite settings, and deploy.
 
+**Render from GitHub**
+
+1. On https://dashboard.render.com choose "New" then "Static Site" and pick the repository.
+2. Build command `npm install && npm run build`, publish directory `dist`. (`render.yaml` is included, so "New" then "Blueprint" fills these in for you.)
+
 `netlify.toml` is included, so connecting the repository to Netlify also works with no settings.
 
 Note: your data is tied to the browser *and* the web address. If you move from localhost to the deployed address, download a backup in Settings first and restore it at the new address.
